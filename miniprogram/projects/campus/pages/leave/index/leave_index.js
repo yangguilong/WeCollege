@@ -74,16 +74,18 @@ Page({
 		if (LeaveBiz.getCateList().length > 1)
 			sortItem1 = sortItem1.concat(LeaveBiz.getCateList());
 
-		let sortMenus = [{ label: '全部', type: 'all', value: '' }];
+		let sortMenus = [
+			// { label: '全部', type: 'all', value: '' }
+		];
 
 
 
 		sortMenus = sortMenus.concat([
 			{ label: '出售中', type: 'status', value: '1' },
 			{ label: '已售出', type: 'status', value: '0' },
-			{ label: '最早ˇ', type: 'sort', value: 'LEAVE_ADD_TIME|asc' },
-			{ label: '点赞数ˇ', type: 'like', value: '' },
-			{ label: '收藏数ˇ', type: 'fav', value: '' },
+			// { label: '最早ˇ', type: 'sort', value: 'LEAVE_ADD_TIME|asc' },
+			// { label: '点赞数ˇ', type: 'like', value: '' },
+			// { label: '收藏数ˇ', type: 'fav', value: '' },
 		]);
 
 
