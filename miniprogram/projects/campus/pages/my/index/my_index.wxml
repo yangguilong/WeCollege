@@ -30,15 +30,15 @@
 					<view class="line1"><text class="icon-attentionfill text-olive"></text></view>
 					<view class="line2">浏览足迹</view>
 				</view>
-				<view class="item" bind:tap="bindMyPostTap">
+				<view class="item" bind:tap="url" data-url="../../leave/index/leave_index?search=我的发布">
 					<view class="line1"><text class="icon-forwardfill text-yellow"></text></view>
 					<view class="line2">我的发布</view>
 				</view>
-				<view class="item" bind:tap="bindMyLikeTap">
+				<!-- <view class="item" bind:tap="bindMyLikeTap">
 					<view class="line1"><text class="icon-appreciatefill text-blue"></text></view>
 					<view class="line2">我的点赞</view>
-				</view>
-				<view class="item" bind:tap="bindMyFavTap">
+				</view> -->
+				<view class="item" bind:tap="url" data-url="../../leave/index/leave_index?search=我的收藏">
 					<view class="line1"><text class="icon-favorfill text-red"></text></view>
 					<view class="line2">我的收藏</view>
 				</view>

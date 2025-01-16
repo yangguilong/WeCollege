@@ -1,5 +1,6 @@
 {
 	"pages": [
+		"projects/campus/pages/leave/index/leave_index",
 		"projects/campus/pages/default/index/default_index",
 		"projects/campus/pages/about/index/about_index",
 		"projects/campus/pages/search/search",
@@ -47,7 +48,6 @@
 		"projects/campus/pages/lost/detail/lost_detail",
 		"projects/campus/pages/admin/lost/list/admin_lost_list",
 		"projects/campus/pages/admin/lost/export/admin_lost_export",
-		"projects/campus/pages/leave/index/leave_index",
 		"projects/campus/pages/leave/add/leave_add",
 		"projects/campus/pages/leave/edit/leave_edit",
 		"projects/campus/pages/leave/detail/leave_detail",
@@ -73,14 +73,14 @@
 		"selectedColor": "#636DEA",
 		"list": [
 			{
-				"pagePath": "projects/campus/pages/default/index/default_index",
+				"pagePath": "projects/campus/pages/leave/index/leave_index",
 				"text": "首页",
 				"iconPath": "/projects/campus/images/tabbar/home.png",
 				"selectedIconPath": "/projects/campus/images/tabbar/home_cur.png"
 			},
 			{
 				"pagePath": "projects/campus/pages/news/index/news_index",
-				"text": "招生指南",
+				"text": "公告",
 				"iconPath": "/projects/campus/images/tabbar/news.png",
 				"selectedIconPath": "/projects/campus/images/tabbar/news_cur.png"
 			},

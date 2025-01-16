@@ -6,7 +6,7 @@
 		</view>
 
 		<view class="tab-bar-border"></view>
-		<view class="tab-bar-item" bindtap="url" data-type="relaunch" data-url="/projects/campus/pages/default/index/default_index">
+		<view class="tab-bar-item" bindtap="url" data-type="relaunch" data-url="/projects/campus/pages/leave/index/leave_index">
 			<image class="tab-icon" src="/projects/campus/images/tabbar/home{{curMenu=='home_index'?'_cur':''}}.png"></image>
 			<view class="tab-text {{curMenu=='home_index'?'menu-project':''}}">首页</view>
 		</view>
