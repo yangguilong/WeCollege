@@ -145,6 +145,8 @@ function checkLen(value, len, desc = '') {
 function checkMobile(value, desc = '') {
 	if (isNull(value)) return;
 
+	if(value === '00000000000') return;
+
 	if (!/(^1[1|2|3|4|5|6|7|8|9][0-9]{9}$)/.test(value))
 		return desc + '格式不正确';
 }

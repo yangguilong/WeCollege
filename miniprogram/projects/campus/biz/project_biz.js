@@ -23,6 +23,7 @@ class ProjectBiz extends BaseBiz {
 		skin.PROJECT_COLOR = projectSetting.PROJECT_COLOR;
 		
 		PubilcBiz.initPageBase(that, { skin, isSetNavColor });
+		PassportBiz.tryLogin();
 	}
 
 }

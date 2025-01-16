@@ -35,6 +35,11 @@ Page({
 		if (!user)
 			return wx.redirectTo({ url: '../reg/my_reg' });
 
+		// 如果是占位的手机号，设置为空字符串
+		if (user.USER_MOBILE === '00000000000') {
+			user.USER_MOBILE = '';
+		}
+
 		this.setData({
 			isLoad: true,
 			isEdit: true,

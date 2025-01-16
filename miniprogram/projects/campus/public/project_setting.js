@@ -12,10 +12,12 @@ module.exports = { //campus
 
 	// 用户
 	USER_REG_CHECK: false,
+
+	// TODO 删除无用字段
 	USER_FIELDS: [
-		{ mark: 'sex', title: '性别', type: 'select', selectOptions: ['男', '女'], must: true },
-		{ mark: 'college', title: '院系', type: 'text', must: true },
-		{ mark: 'sub', title: '专业', type: 'text', must: true },
+		{ mark: 'sex', title: '性别', type: 'select', selectOptions: ['男', '女'], must: false, def: '男' },
+		{ mark: 'college', title: '院系', type: 'text', must: false },
+		{ mark: 'sub', title: '专业', type: 'text', must: false },
 		{ mark: 'address', title: '宿舍楼栋', type: 'text', must: false },
 	],
 	USER_CHECK_FORM: {

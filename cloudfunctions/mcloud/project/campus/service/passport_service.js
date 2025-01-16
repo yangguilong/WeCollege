@@ -32,7 +32,9 @@ class PassportService extends BaseProjectService {
 			USER_MOBILE: mobile
 		}
 		cnt = await UserModel.count(where);
-		if (cnt > 0) this.AppError('该手机已注册');
+		if (mobile !== '00000000000' && cnt > 0) {
+			this.AppError('该手机已注册');
+		}
 
 		// 入库
 		let data = {

@@ -33,8 +33,7 @@
 	<view wx:if="{{formPicFocus}}" class="hint-desc error">{{formPicFocus}}</view>
 
 </view>
-
-<view class="form-box shadow-project card-project margin-top-xs">
+<view hidden="true" class="form-box shadow-project card-project margin-top-xs">
 	<cmpt-form-show id="cmpt-form" mark="cmpt-form" isCacheMatch="{{false}}" fields="{{fields}}" forms="{{formForms}}" isDefMatch="{{isEdit?false:true}}">
 	</cmpt-form-show>
 </view>
