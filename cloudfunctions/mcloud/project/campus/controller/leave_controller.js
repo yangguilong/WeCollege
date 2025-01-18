@@ -11,7 +11,7 @@ const contentCheck = require('../../../framework/validate/content_check.js');
 
 class LeaveController extends BaseProjectController {
 
-	/** 点赞 */
+	/** 点赞 -> 改为我想要 */
 	async likeLeave() {
 		// 数据校验
 		let rules = {

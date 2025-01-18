@@ -176,7 +176,7 @@ Page({
 					}
 					case 1: {
 						wx.navigateTo({
-							url: '../../leave/index/leave_index?search=我的点赞',
+							url: '../../leave/index/leave_index?search=我的想要',
 						});
 						break;
 					}

@@ -232,7 +232,7 @@ class LeaveService extends BaseProjectService {
 			if (search == '我的发布') {
 				where.and.LEAVE_USER_ID = userId;
 			}
-			else if (search == '我的点赞') {
+			else if (search == '我的想要') {
 				where.and.LEAVE_LIKE_LIST = userId;
 			}
 			else if (search == '我的收藏') {

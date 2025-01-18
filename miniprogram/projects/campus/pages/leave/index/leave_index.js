@@ -21,7 +21,7 @@ Page({
 	},
 
 	bindMyTap: function (e) {
-		let itemList = ['我的发布', '我的点赞', '我的收藏']; 
+		let itemList = ['我的发布', '我的想要', '我的收藏']; 
 		wx.showActionSheet({
 			itemList,
 			success: async res => {
@@ -31,7 +31,7 @@ Page({
 						break;
 					}
 					case 1: {
-						this._setMy(this, '我的点赞');
+						this._setMy(this, '我的想要');
 						break;
 					}
 					case 2: {
