@@ -34,8 +34,8 @@ class AdminHomeService extends BaseProjectAdminService {
 			{ title: '用户数', cnt: userCnt },
 			{ title: '公告数', cnt: newsCnt },
 
-			{ title: '兼职数', cnt: jobCnt },
-			{ title: '表白数', cnt: boardCnt },
+			//{ title: '兼职数', cnt: jobCnt },
+			//{ title: '表白数', cnt: boardCnt },
 			{ title: '闲置数', cnt: leaveCnt },
 			{ title: '失物数', cnt: lostCnt },
 		]

@@ -34,14 +34,14 @@
 		</view>
 		<view class="item" bindtap="url" data-url="../../news/list/admin_news_list"> <text class="icon-formfill text-darkgreen"></text> <text class="text-black">公告管理</text>
 		</view>
-		<view class="item" bindtap="url" data-url="../../job/list/admin_job_list"> <text class="icon-friendfill text-pink"></text> <text class="text-black">兼职管理</text>
-		</view>
+		<!-- <view class="item" bindtap="url" data-url="../../job/list/admin_job_list"> <text class="icon-friendfill text-pink"></text> <text class="text-black">兼职管理</text>
+		</view> -->
 		<view class="item" bindtap="url" data-url="../../lost/list/admin_lost_list"> <text class="icon-samefill text-orange"></text> <text class="text-black">失物招领管理</text>
 		</view>
 		<view class="item" bindtap="url" data-url="../../leave/list/admin_leave_list"> <text class="icon-cartfill text-blue"></text> <text class="text-black">闲置物品管理</text>
 		</view>
-		<view class="item" bindtap="url" data-url="../../board/list/admin_board_list"> <text class="icon-likefill text-red"></text> <text class="text-black">表白墙管理</text>
-		</view>
+		<!-- <view class="item" bindtap="url" data-url="../../board/list/admin_board_list"> <text class="icon-likefill text-red"></text> <text class="text-black">表白墙管理</text>
+		</view> -->
 	</view>
 
 
