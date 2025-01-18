@@ -111,21 +111,23 @@ Page({
 				id
 			}
 			let options = {
-				title: leave.like ? '点赞取消中' : '点赞中'
+				title: leave.like ? '取消“我想要”' : '发送请求'
 			}
 			await cloudHelper.callCloudSumbit('leave/like', params, options).then(res => {
-				if (res.data === true) {
+				if (res.data === true) { // 已转让
 					leave.like = true;
 					leave.LEAVE_LIKE_CNT++;
+					leave.LEAVE_STATUS = 0;
 					this.setData({ leave });
-					pageHelper.showSuccToast('点赞成功');
+					pageHelper.showSuccToast('成功');
 				}
-				else {
+				else {  // 转让中
 					leave.like = false;
 					leave.LEAVE_LIKE_CNT--;
 					if (leave.LEAVE_LIKE_CNT < 0) leave.LEAVE_LIKE_CNT = 0;
+					leave.LEAVE_STATUS = 1;
 					this.setData({ leave });
-					pageHelper.showSuccToast('已取消');
+					pageHelper.showSuccToast('取消');
 				}
 
 			});
