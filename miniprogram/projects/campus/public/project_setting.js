@@ -94,7 +94,7 @@ module.exports = { //campus
 	],
 	LEAVE_FIELDS: [
 		{ mark: 'title', title: '物品名称', type: 'text', max: 50, must: true },
-		{ mark: 'price', title: '物品价格', type: 'text', must: true },
+		// { mark: 'price', title: '物品价格', type: 'text', must: true },
 		{ mark: 'desc', title: '物品介绍', type: 'textarea', must: true },
 		{ mark: 'poster', title: '联系人', type: 'text', must: true },
 		{ mark: 'tel', title: '电话', type: 'text', must: true },
