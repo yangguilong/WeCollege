@@ -55,12 +55,12 @@
 			</view>
 
 
-			<view class="item arrow" bindtap="url" data-url="../../about/index/about_index?key=SETUP_CONTENT_ABOUT">
+			<!-- <view class="item arrow" bindtap="url" data-url="../../about/index/about_index?key=SETUP_CONTENT_ABOUT">
 				<view class="content">
 					<text class="icon-servicefill text-blue"></text>
 					<text class="text-black">关于我们</text>
 				</view>
-			</view>
+			</view> -->
 
 			<view class="item arrow" bindtap="url" data-url="../../about/index/about_index?key=SETUP_CONTENT_CONTACT">
 				<view class="content">
