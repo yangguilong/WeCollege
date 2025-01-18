@@ -97,8 +97,8 @@ module.exports = { //campus
 		// { mark: 'price', title: '物品价格', type: 'text', must: true },
 		{ mark: 'desc', title: '物品介绍', type: 'textarea', must: true },
 		{ mark: 'poster', title: '联系人', type: 'text', must: true },
-		{ mark: 'tel', title: '电话', type: 'text', must: true },
-		{ mark: 'wx', title: '微信', type: 'text', must: false },
+		{ mark: 'tel', title: '联系方式', type: 'text', must: true, desc: '可填写电话号码或者微信号'},
+		// { mark: 'wx', title: '微信', type: 'text', must: false },
 		{ mark: 'pic', title: '物品图片', type: 'image', min: 0, max: 8, must: true }
 	],
 
