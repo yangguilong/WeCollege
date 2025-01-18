@@ -14,9 +14,53 @@ const UserModel = require('../model/user_model.js');
 
 class LeaveService extends BaseProjectService {
 
-	/** 点赞 */
+	/** 点赞 -> 改为“我想要” (toggle) */
 	async likeLeave(userId, id) {
-		this.AppError('likeLeave [校园圈]该功能暂不开放');
+		// this.AppError('likeLeave [校园圈]该功能暂不开放');
+		let where = {
+			_id: id,
+			//LEAVE_STATUS: 1
+		}
+		let fields = 'LEAVE_USER_ID,LEAVE_STATUS,LEAVE_LIKE_CNT,LEAVE_LIKE_LIST';
+
+		let leave = await LeaveModel.getOne(where, fields);
+		if (!leave) return null;
+		if (leave.LEAVE_USER_ID == userId) {
+			this.AppError('不能想要自己的物品');
+			return;
+		}
+
+		let newLikeList = leave.LEAVE_LIKE_LIST;
+		let newStatus = 0;
+		if (leave.LEAVE_STATUS==0) { // 已转让
+			console.log("likeLeave: status==0 已转让")
+			if (leave.LEAVE_LIKE_LIST
+				&& Array.isArray(leave.LEAVE_LIKE_LIST)
+				&& leave.LEAVE_LIKE_LIST.includes(userId)) {
+				// already liked by current user, remove it
+				newLikeList = leave.LEAVE_LIKE_LIST.filter(item => item !== userId);
+				newStatus = 1;
+			} else {
+				this.AppError("物品已被转让给其他人"); // liked by other user?
+				return;
+			}
+		} else { // LEAVE_STATUS==1
+			console.log("likeLeave: status==1 转让中")
+			if (leave.LEAVE_LIKE_LIST) {
+				newLikeList = leave.LEAVE_LIKE_LIST.concat(userId)
+			} else {
+				newLikeList = [userId,]
+			}
+			newStatus = 0;  // 已转让
+		}
+
+		let data = {
+			LEAVE_LIKE_CNT: newLikeList.length,
+			LEAVE_LIKE_LIST: newLikeList,
+			LEAVE_STATUS: Number(newStatus) // 已转让
+		}
+		await LeaveModel.edit(where, data);
+		return newStatus == 0; // 是否已转让
 	}
 
 	/** 浏览 */
