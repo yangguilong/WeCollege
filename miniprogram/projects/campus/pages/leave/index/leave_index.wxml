@@ -29,8 +29,8 @@
 						</view>
 					</view>
 					<view class="right">
-						<view wx:if="{{item.LEAVE_STATUS==1}}" class="status bg-green light">出售中</view>
-						<view wx:elif="{{item.LEAVE_STATUS==0}}" class="status bg-grey light">已售出</view>
+						<view wx:if="{{item.LEAVE_STATUS==1}}" class="status bg-green light">转让中</view>
+						<view wx:elif="{{item.LEAVE_STATUS==0}}" class="status bg-grey light">已转让</view>
 						<image mode="aspectFill" lazy-load="{{true}}" class="loading" src="{{item.LEAVE_OBJ.pic[0]}}">
 						</image>
 					</view>

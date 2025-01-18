@@ -5,8 +5,8 @@
 	<view class="main padding-project">
 		<!-- article content begin -->
 		<view class="article card-project shadow-project">
-			<view wx:if="{{leave.LEAVE_STATUS==1}}" class="mark-status bg-green light">出售中</view>
-			<view wx:elif="{{leave.LEAVE_STATUS==0}}" class="mark-status bg-grey light">已售出</view>
+			<view wx:if="{{leave.LEAVE_STATUS==1}}" class="mark-status bg-green light">转让中</view>
+			<view wx:elif="{{leave.LEAVE_STATUS==0}}" class="mark-status bg-grey light">已转让</view>
 
 			<view class="title"><text user-select="true">{{leave.LEAVE_OBJ.title}}</text></view>
 			<view class="time">

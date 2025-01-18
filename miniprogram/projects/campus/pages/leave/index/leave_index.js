@@ -45,7 +45,7 @@ Page({
 	},
 
 	bindStatusTap: function (e) {
-		let itemList = ['设为出售中', '设为已售出'];
+		let itemList = ['设为转让中', '设为已转让'];
 		let id = pageHelper.dataset(e, 'id');
 		wx.showActionSheet({
 			itemList,
@@ -75,14 +75,14 @@ Page({
 			sortItem1 = sortItem1.concat(LeaveBiz.getCateList());
 
 		let sortMenus = [
-			// { label: '全部', type: 'all', value: '' }
+			{ label: '全部', type: 'all', value: '' }
 		];
 
 
 
 		sortMenus = sortMenus.concat([
-			{ label: '出售中', type: 'status', value: '1' },
-			{ label: '已售出', type: 'status', value: '0' },
+			{ label: '转让中', type: 'status', value: '1' },
+			{ label: '已转让', type: 'status', value: '0' },
 			// { label: '最早ˇ', type: 'sort', value: 'LEAVE_ADD_TIME|asc' },
 			// { label: '点赞数ˇ', type: 'like', value: '' },
 			// { label: '收藏数ˇ', type: 'fav', value: '' },

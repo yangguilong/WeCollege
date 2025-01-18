@@ -21,7 +21,7 @@
 
 		<view class="form-group">
 			<view class="title must">状态</view>
-			<cmpt-picker mark="formStatus" style="flex:1" model:item="{{formStatus}}" sourceDataStr="999=所有,1=出售中,0=已售出" />
+			<cmpt-picker mark="formStatus" style="flex:1" model:item="{{formStatus}}" sourceDataStr="999=所有,1=转让中,0=已转让" />
 		</view>
 
 	</view>

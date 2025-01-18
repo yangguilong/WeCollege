@@ -146,7 +146,7 @@ Page({
 
 	bindStatusMoreTap: async function (e) {
 		if (!AdminBiz.isAdmin(this)) return;
-		let itemList = ['设为出售中', '设为已售出', '删除'];
+		let itemList = ['设为转让中', '设为已转让', '删除'];
 		wx.showActionSheet({
 			itemList,
 			success: async res => {
@@ -209,8 +209,8 @@ Page({
 
 		let sortMenus = [
 			{ label: '全部', type: '', value: '' },
-			{ label: '出售中', type: 'status', value: 1 },
-			{ label: '已售出', type: 'status', value: 0 },
+			{ label: '转让中', type: 'status', value: 1 },
+			{ label: '已转让', type: 'status', value: 0 },
 			{ label: '置顶', type: 'top', value: 'top' },
 			{ label: '最早ˇ', type: 'sort', value: 'LEAVE_ADD_TIME|asc' },
 			{ label: '点赞数ˇ', type: 'sort', value: 'LEAVE_LIKE_CNT|desc' },
