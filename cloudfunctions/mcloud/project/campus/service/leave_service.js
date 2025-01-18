@@ -48,9 +48,9 @@ class LeaveService extends BaseProjectService {
 		//this.AppError('statusLeave [校园圈]该功能暂不开放，如有需要请加作者微信：cclinux0730');
 
 		let where = { 
-			LEAVE_ID: id,
+			_id: id,
 		}
-		if (userId) where.LEAVE_USER_ID = userId; // for  admin
+		if (userId) where.LEAVE_USER_ID = userId; // for  admin??
 
 		let data = {
 			LEAVE_STATUS: Number(status)
@@ -62,7 +62,7 @@ class LeaveService extends BaseProjectService {
 	async delLeave(userId, id) {
 		// this.AppError('delLeave [校园圈]该功能暂不开放，如有需要请加作者微信：cclinux0730');
 		let where = {
-			LEAVE_ID: id,
+			_id: id,
 		}
 		let effect = await LeaveModel.del(where);
 
@@ -118,7 +118,7 @@ class LeaveService extends BaseProjectService {
 	}) {
 		// this.AppError('editLeave [校园圈]该功能暂不开放，如有需要请加作者微信：cclinux0730');
 		let where = {
-			LEAVE_ID: id
+			_id: id
 		}
 		let fields = 'LEAVE_ID,LEAVE_STATUS'
 		let leave = await LeaveModel.getOne(where, fields);
@@ -147,7 +147,7 @@ class LeaveService extends BaseProjectService {
 		// this.AppError('updateLeaveForms [校园圈]该功能暂不开放，如有需要请加作者微信：cclinux0730');
 
 		let where = {
-			'LEAVE_ID': id
+			_id: id
 		}
 		let fields = 'LEAVE_ID,LEAVE_OBJ';
 		let leave = await LeaveModel.getOne(where, fields);
