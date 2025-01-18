@@ -19,7 +19,7 @@ LeaveModel.DB_STRUCTURE = {
 
 	LEAVE_ID: 'string|true',
 
-	LEAVE_STATUS: 'int|true|default=1|comment=状态 0=仅自己可见,1=正常',
+	LEAVE_STATUS: 'int|true|default=1|comment=状态 0=已售出(仅自己可见),1=出售中(正常)',
 
 	LEAVE_CATE_ID: 'string|true|default=0|comment=分类',
 	LEAVE_CATE_NAME: 'string|false|comment=分类冗余',

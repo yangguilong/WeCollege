@@ -16,7 +16,7 @@ class LeaveService extends BaseProjectService {
 
 	/** 点赞 */
 	async likeLeave(userId, id) {
-		this.AppError('[校园圈]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('likeLeave [校园圈]该功能暂不开放');
 	}
 
 	/** 浏览 */
@@ -45,12 +45,30 @@ class LeaveService extends BaseProjectService {
 
 	/**修改状态 */
 	async statusLeave(userId, id, status) {
-		this.AppError('[校园圈]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		//this.AppError('statusLeave [校园圈]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+
+		let where = { 
+			LEAVE_ID: id,
+		}
+		if (userId) where.LEAVE_USER_ID = userId; // for  admin
+
+		let data = {
+			LEAVE_STATUS: Number(status)
+		}
+		return await LeaveModel.edit(where, data);		
 	}
 
 	/** 删除 */
 	async delLeave(userId, id) {
-		this.AppError('[校园圈]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		// this.AppError('delLeave [校园圈]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let where = {
+			LEAVE_ID: id,
+		}
+		let effect = await LeaveModel.del(where);
+
+		return {
+			effect
+		};		
 	}
 
 	/** 插入 */
@@ -60,7 +78,34 @@ class LeaveService extends BaseProjectService {
 		order,
 		forms
 	}) {
-		this.AppError('[校园圈]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		// TODO: 判断重复/频繁发布
+
+		// 入库
+		let pubTime = timeUtil.time();
+		let data = {
+			LEAVE_STATUS: 1, // 正常(出售中)
+			LEAVE_CATE_ID: cateId,
+			LEAVE_CATE_NAME: cateName,
+			LEAVE_ORDER: order, // 顺序，用于置顶，小的优先
+			//LEAVE_VOUCH: 0,  //?
+			LEAVE_USER_ID: userId,
+			LEAVE_DAY: timeUtil.timestamp2Time(pubTime, 'Y-M-D h:m'),
+
+			LEAVE_FORMS: forms, // array
+			// title, price, desc, poster, tel, wx, pic
+			LEAVE_OBJ: dataUtil.dbForms2Obj(forms),
+
+			LEAVE_FAV_CNT: 0,
+			LEAVE_VIEW_CNT: 0,
+			LEAVE_LIKE_CNT: 0,
+
+			// LEAVE_ADD_TIME: pubTime, // Model.insert() would set this automatically
+			// LEAVE_EDIT_TIME: pubTime, // Model.insert() would set this automatically
+		}
+
+		return {
+			id: await LeaveModel.insert(data),
+		}
 	}
 
 	/** 修改 */
@@ -71,8 +116,27 @@ class LeaveService extends BaseProjectService {
 		order,
 		forms
 	}) {
+		// this.AppError('editLeave [校园圈]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let where = {
+			LEAVE_ID: id
+		}
+		let fields = 'LEAVE_ID,LEAVE_STATUS'
+		let leave = await LeaveModel.getOne(where, fields);
+		if (!leave) return;
+		if (leave.LEAVE_STATUS != 1) {
+			this.AppError('物品状态错误');
+			return;
+		}
 
-		this.AppError('[校园圈]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let data = {
+			LEAVE_CATE_ID: cateId,
+			LEAVE_CATE_NAME: cateName,
+			LEAVE_ORDER: order, // 顺序，用于置顶，小的优先
+			LEAVE_FORMS: forms, // array
+			// title, price, desc, poster, tel, wx, pic
+			LEAVE_OBJ: dataUtil.dbForms2Obj(forms),
+		}
+		return await LeaveModel.edit(where, data);
 	}
 
 	/** 更新forms信息 */
@@ -80,7 +144,20 @@ class LeaveService extends BaseProjectService {
 		id,
 		hasImageForms
 	}) {
-		this.AppError('[校园圈]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		// this.AppError('updateLeaveForms [校园圈]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+
+		let where = {
+			'LEAVE_ID': id
+		}
+		let fields = 'LEAVE_ID,LEAVE_OBJ';
+		let leave = await LeaveModel.getOne(where, fields);
+		if (!leave) return;
+
+		let data = {
+			LEAVE_OBJ: dataUtil.dbForms2Obj(hasImageForms),
+		}
+
+		return await LeaveModel.editForms(where, 'LEAVE_FORMS', 'LEAVE_OBJ', hasImageForms)
 	}
 
 	/** 列表与搜索 */
