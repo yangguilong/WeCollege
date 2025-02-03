@@ -67,47 +67,6 @@ module.exports = {
 	'admin/news_sort': 'admin/admin_news_controller@sortNews#demo',
 	'admin/news_status': 'admin/admin_news_controller@statusNews#demo',
 
-	// 兼职
-	'job/list': 'job_controller@getJobList',
-	'job/insert': 'job_controller@insertJob',
-	'job/edit': 'job_controller@editJob',
-	'job/status': 'job_controller@statusJob',
-	'job/update_forms': 'job_controller@updateJobForms',
-	'job/del': 'job_controller@delJob',
-	'job/view': 'job_controller@viewJob',
-	'job/like': 'job_controller@likeJob',
-	'job/detail': 'job_controller@getJobDetail',
-
-	'admin/job_detail': 'admin/admin_job_controller@getAdminJobDetail',
-	'admin/job_list': 'admin/admin_job_controller@getAdminJobList',
-	'admin/job_status': 'admin/admin_job_controller@statusJob#demo',
-	'admin/job_del': 'admin/admin_job_controller@delJob#demo',
-	'admin/job_sort': 'admin/admin_job_controller@sortJob#demo',
-	'admin/job_data_get': 'admin/admin_job_controller@jobDataGet',
-	'admin/job_data_export': 'admin/admin_job_controller@jobDataExport',
-	'admin/job_data_del': 'admin/admin_job_controller@jobDataDel',
-
-
-	// 表白墙
-	'board/list': 'board_controller@getBoardList',
-	'board/insert': 'board_controller@insertBoard',
-	'board/edit': 'board_controller@editBoard',
-	'board/status': 'board_controller@statusBoard',
-	'board/update_forms': 'board_controller@updateBoardForms',
-	'board/del': 'board_controller@delBoard',
-	'board/view': 'board_controller@viewBoard',
-	'board/like': 'board_controller@likeBoard',
-	'board/detail': 'board_controller@getBoardDetail',
-
-	'admin/board_detail': 'admin/admin_board_controller@getAdminBoardDetail',
-	'admin/board_list': 'admin/admin_board_controller@getAdminBoardList',
-	'admin/board_status': 'admin/admin_board_controller@statusBoard#demo',
-	'admin/board_del': 'admin/admin_board_controller@delBoard#demo',
-	'admin/board_sort': 'admin/admin_board_controller@sortBoard#demo',
-	'admin/board_data_get': 'admin/admin_board_controller@boardDataGet',
-	'admin/board_data_export': 'admin/admin_board_controller@boardDataExport',
-	'admin/board_data_del': 'admin/admin_board_controller@boardDataDel',
-
 	// 失物招领
 	'lost/list': 'lost_controller@getLostList',
 	'lost/insert': 'lost_controller@insertLost',
