@@ -200,8 +200,25 @@ class AdminMgrService extends BaseProjectAdminService {
 
 	/** 修改自身密码 */
 	async pwdtMgr(adminId, oldPassword, password) {
+		console.log("pwdtMgr raw=", password)
+		console.log("pwdtMgr md5=", md5Lib.md5(password))
 
-		this.AppError('[校园圈]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		// 判断是否存在
+		let where = {
+			_id: adminId,
+			ADMIN_STATUS: 1,
+			ADMIN_PASSWORD: md5Lib.md5(oldPassword)
+		}
+		let fields = 'ADMIN_ID,ADMIN_NAME,ADMIN_DESC,ADMIN_TYPE,ADMIN_LOGIN_TIME,ADMIN_LOGIN_CNT';
+		let admin = await AdminModel.getOne(where, fields);
+		if (!admin)
+			this.AppError('管理员不存在或者已停用');
+		
+		let data = {
+			ADMIN_PASSWORD: md5Lib.md5(password)
+		};
+		
+		await AdminModel.edit(where, data);
 	}
 }
 
